@@ -1,0 +1,22 @@
+version: "3"
+services:
+  mongodb:
+    container_name: todo_mongodb
+    ports:
+      - 27017:27017
+    image: mongo:7.0.5
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=example
+  todo_app:
+    container_name: todo_app
+    depends_on:
+      - mongodb
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    environment:
+      - MONGODB_URI=mongodb://root:example@todo_mongodb:27017/todo?authSource=admin
+      - PORT=8080

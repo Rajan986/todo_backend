@@ -1,0 +1,29 @@
+{
+  "name": "assesment",
+  "version": "1.0.0",
+  "description": "Proshore Assessment",
+  "main": "app.js",
+  "scripts": {
+    "start:dev:build": "tsc -w",
+    "start:prod:build": "tsc",
+    "start:dev:run": "nodemon ./dist/app.js",
+    "start:dev": "concurrently npm:start:dev:*",
+    "start:prod": "node ./dist/app.js"
+  },
+  "author": "Rajan Devkota",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.12.11",
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.3.4"
+  }
+}
