@@ -1,1 +1,3 @@
-Please use the docker-compose.yaml to start the application
+if you have docker installed in your systems consider using docker-compose yaml
+
+- docker-compose up --build -d
